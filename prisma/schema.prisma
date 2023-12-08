@@ -23,8 +23,15 @@ model BankAccount {
     agency    String
     account   String   @unique
     digit     String
+    type      String
+    balance   Float    @default(0)
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
     userId    String   @unique
     user      User     @relation(fields: [userId], references: [id])
+}
+
+enum bankAccountType {
+    CURRENT
+    SAVINGS
 }

@@ -72,6 +72,8 @@ describe('UserService', () => {
   describe('create', () => {
     it('should create and return a user', async () => {
       jest.spyOn(service, 'findByDocument').mockResolvedValue(null);
+      jest.spyOn(service, 'findByEmail').mockResolvedValue(null);
+
       const user = await service.create(mockUser);
       expect(user).toEqual(mockUser);
       expect(prismaService.user.create).toHaveBeenCalledWith({

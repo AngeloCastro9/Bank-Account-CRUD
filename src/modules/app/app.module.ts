@@ -8,6 +8,7 @@ import { PrismaModule } from '../../connections/prisma/prisma.module';
 import { UserModule } from '../user/user.module';
 import { MongodbModule } from '../../connections/mongodb/mongodb.module';
 import { LogModule } from '../../shared/modules/log/log.module';
+import { BankAccountModule } from '../bank-account/bank-account.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { LogModule } from '../../shared/modules/log/log.module';
     UserModule,
     MongodbModule,
     LogModule,
+    BankAccountModule,
   ],
   providers: [
     AppService,

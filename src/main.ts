@@ -9,6 +9,7 @@ async function bootstrap() {
   const options = new DocumentBuilder()
     .setTitle('Bank-Account-CRUD')
     .setVersion('0.0.1')
+    .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);

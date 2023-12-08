@@ -23,11 +23,23 @@ export class UserService {
     return user;
   }
 
+  async findByEmail(email: string): Promise<User> {
+    this.log.info('finding user by email', email);
+    const user = await this.prisma.user.findUnique({
+      where: {
+        email,
+      },
+    });
+
+    return user;
+  }
+
   async create(data: CreateUserDto): Promise<User> {
     this.log.info('creating user', data.document);
-    const user = await this.findByDocument(data.document);
+    const findByDocument = await this.findByDocument(data.document);
+    const findByEmail = await this.findByEmail(data.email);
 
-    if (user) {
+    if (findByDocument || findByEmail) {
       this.log.error('user already exists', data.document);
       throw new HttpException(
         ErrorMessagesEnum.USER_ALREADY_EXISTS,

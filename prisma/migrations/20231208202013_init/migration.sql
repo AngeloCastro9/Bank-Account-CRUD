@@ -1,3 +1,6 @@
+-- CreateEnum
+CREATE TYPE "bankAccountType" AS ENUM ('CURRENT', 'SAVINGS');
+
 -- CreateTable
 CREATE TABLE "User" (
     "id" TEXT NOT NULL,
@@ -17,6 +20,8 @@ CREATE TABLE "BankAccount" (
     "agency" TEXT NOT NULL,
     "account" TEXT NOT NULL,
     "digit" TEXT NOT NULL,
+    "type" TEXT NOT NULL,
+    "balance" DOUBLE PRECISION NOT NULL DEFAULT 0,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
     "userId" TEXT NOT NULL,
