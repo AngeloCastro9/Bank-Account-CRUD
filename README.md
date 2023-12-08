@@ -26,3 +26,7 @@ Antes de começar, você vai precisar:
  - Crie sua conta na em: **POST /user**
  - Faça seu login com as informações cadastradas na conta
  - Com o **login** feito, pegue a resposta do endpoint `token` e coloque-a no `Authorize` do swagger para acessar as demais rotas protegidas
+
+
+## Executando testes
+- Execute o comando: `yarn run test`
