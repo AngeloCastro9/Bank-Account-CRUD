@@ -18,9 +18,11 @@ Antes de começar, você vai precisar:
  - Execute o comando: `yarn seed`. Este comando irá popular o banco de dados (postgres) com um usuário e uma conta bancária
  - Acesse o Swagger em: `localhost:8080/api`
  - As informações do usuário cadastrado pelo **seed** estão no arquivo: **seed.ts**
- - Faça o seu **login**
+ - Faça o seu **login** com os dados do **usuário**
+ - Com o **login** feito, pegue a resposta do endpoint `token` e coloque-a no `Authorize` do swagger para acessar as demais rotas protegidas
 
 ### Caminho sem seed 🚀
  - Acesse o Swagger em: `localhost:8080/api`
  - Crie sua conta na em: **POST /user**
  - Faça seu login com as informações cadastradas na conta
+ - Com o **login** feito, pegue a resposta do endpoint `token` e coloque-a no `Authorize` do swagger para acessar as demais rotas protegidas
